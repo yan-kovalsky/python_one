@@ -1,17 +1,15 @@
 import os
 from glob import glob
 import shutil
+
 #получаем имя всех файлов в указанной директории - эти файлы надо будет записать поверх старых
-path = 'C:/Users/kamaev/Desktop/OTHER/Python/testing/New folder'
+path = 'C:/Users/kamaev/Desktop/OTHER/Python/testing/New folder'             #это надо заменить на ввод!
 for root,dirs,files in os.walk(path):
      targetFilesArray = files
      array1 =[]
      for i in targetFilesArray:
          array1.append(os.path.join(root,i))
 
-
-     # print(targetFilesArray)
-print (array1)
 
 # функция для поиска конкретного файла в целевой директории и поддиректториях,
 # возвращает список, содержащий путь и имя файла
@@ -25,13 +23,13 @@ def findFiles (fileName,path):
 
 #для каждого файла выполняем фукнцию поиска
 for x in targetFilesArray:
-    path = 'C:/Users/kamaev/Desktop/OTHER/Python/testing/Old folder tree'
+    path = 'C:/Users/kamaev/Desktop/OTHER/Python/testing/Old folder tree' #это надо заменить на ввод!
     a = findFiles (x,path)
     if len(a) > 1:
         print('Для файла', x, 'в целевой директории найдены несколько совпадений!:',a)
     else:
        final = a
-       print(final)
+       # print(final)
 
 # делаем из списков экземпляры файлов
     i = 0
@@ -48,4 +46,3 @@ for x in targetFilesArray:
 
  # перезаписываем дубликаты
 rewright = shutil.copyfile(sourceFile,targetFile)
-print (rewright)
