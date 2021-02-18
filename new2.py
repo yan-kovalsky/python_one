@@ -1,6 +1,7 @@
 import os
 from glob import glob
 import shutil
+from sys import exit
 
 #получаем имя всех файлов в указанной директории - эти файлы надо будет записать поверх старых
 path = 'C:/Users/kamaev/Desktop/OTHER/Python/testing/New folder'             #это надо заменить на ввод!
@@ -27,6 +28,7 @@ for x in targetFilesArray:
     a = findFiles (x,path)
     if len(a) > 1:
         print('Для файла', x, 'в целевой директории найдены несколько совпадений!:',a)
+        exit()
     else:
        final = a
        # print(final)
